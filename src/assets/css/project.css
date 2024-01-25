@@ -1,0 +1,263 @@
+.h1Title{
+  font-size: 36px;
+}
+.classificationDiv{
+  margin-top: 20px;
+}
+.classificationDiv ul li{
+  display: inline-block;
+  margin-right: 40px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.classificationDiv ul li.active {
+  color: #205085;
+}
+/*查看更多-按鈕*/
+.textCenter{
+  text-align: center;
+}
+.processBtn{
+  border: 1px solid #2FAEFF;
+  color: #2FAEFF;
+  font-size: 22px;
+  display: inline-block;
+  padding: 20px 70px;
+  cursor: pointer;
+}
+
+
+.pro-more-btn{
+  display: flex;
+  justify-content: center;
+}
+
+.pro-more-btn .btn{
+  padding: 15px 50px;
+  font-size: 20px;
+  color: #000;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.pro-more-btn .btn:hover{
+  color: #fff;
+}
+
+
+
+@media screen and (max-width: 767px) {
+  .h1Title{
+    font-size: 20px;
+  }
+  .classificationDiv ul li {
+
+    font-size: 16px;
+    margin: 5px 10px;
+  }
+  .processBtn{
+    font-size: 18px;
+    padding: 10px 35px;
+  }
+}
+/*開發案例*/
+.projectBox {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px 0;
+}
+.projectBox > .projectBoxItem {
+  width: 32%;
+  margin: 15px 0.6%;
+  transition: z-index .5s;
+  position: relative;
+  color: #fff;
+  overflow: hidden;
+  cursor: pointer;
+}
+.projectImgWeb{
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.projectImgPc img{
+  width: 100%;
+  height: 100%;
+}
+.projectImgWeb img{
+  height: 100%;
+}
+
+.projectImgWeb{
+  opacity: 0;
+  transform: perspective(340px) rotateY(-40deg);
+  transition: 0.5s;
+}
+.projectBoxText{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  transition: transform .4s ease-in-out;
+  padding: 0 10px;
+  pointer-events: none;
+  display: flex;
+  align-items: flex-end;
+  transform-origin: 0 50%;
+  color: #FFFFFF;
+  background: rgba(137, 137, 137, 0.3);
+}
+
+.projectBoxText > div {
+  font-size: 16px;
+  padding-bottom: 5%;
+  transition: all .4s ease-in-out;
+  transform: translate3d(0, 80%, 0);
+  transform-origin: 0 50%;
+  min-width: 50%;
+  max-width: 55%;
+}
+
+.projectBoxText > div .rpTop {
+  transition: transform .4s ease-in-out;
+  transform: translate3d(0, -80%, 0);
+}
+
+.projectBoxText .rpText {
+  padding: 10px 0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+.projectBoxModal{
+  opacity: 0;
+  position: absolute;
+}
+.projectBoxText .rpText>p{
+  overflow:hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -o-text-overflow:ellipsis;
+}
+@media screen and (min-width:1201px){
+  .projectBoxItem:hover .projectImgPc{
+    transform: perspective(340px) rotateY(5deg) scale(0.95);
+  }
+  .projectBoxItem:hover .projectImgPc img{
+    transition: transform 4s .4s linear, opacity .5s;
+    transform: translate3d(-8%, 0, 0)
+  }
+  .projectBoxItem:hover .projectImgWeb{
+    opacity: 1;
+    transform: perspective(340px) rotateY(0);
+  }
+  .projectBoxItem:hover .projectBoxText>div,.projectBoxItem:hover .projectBoxText>div .rpTop{
+    transform: translate3d(0, 10%, 0);
+  }
+}
+.projectBoxItem .projectImgPc{
+  transition: 0.5s;
+}
+.projectBoxText .rpTitle{
+  font-size: 22px;
+  padding-top: 10px;
+}
+.projectBoxText a{
+  color: #72c8ff;
+  pointer-events: auto;
+  display: inline-block;
+  margin-top: 15px;
+  font-weight: bolder;
+}
+.projectBoxText a i{
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+.projectBoxText > div .rpTop>img{
+  max-height: 40px;
+}
+
+@media screen and (max-width:1200px){
+  .projectBoxText > div,.projectBoxText > div .rpTop{
+    transform: inherit;
+  }
+  .projectBoxText .rpText{
+    padding: 0;
+    max-width: 100%;
+  }
+  .projectBoxText .rpText>p{
+    display: none;
+  }
+}
+@media screen and (max-width:1023px){
+  .projectBoxText .rpTitle{
+    padding-top: 10px;
+  }
+  .projectBoxText a{
+    margin-top: 10px;
+  }
+
+  .projectBoxText>div{
+    max-width: 100%;
+  }
+}
+@media screen and (max-width:767px){
+  .projectBox{
+    padding:  0 0 15px 0;
+  }
+  .projectBox > .projectBoxItem {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+/*案例弹框*/
+.modalCase{
+  padding: 65px;
+  box-sizing: border-box;
+  background: #FFFFFF;
+  width: 100%;
+}
+.modalCaseText > strong {
+  font-size: 24px;
+}
+.modalCaseText > div {
+  font-size: 14px;
+  color: #232425;
+  margin-top: 15px;
+  line-height: 1.8;
+  text-align: justify;
+}
+.modalCaseText > div ul li{
+  padding-left: 20px;
+  position: relative;
+  list-style: none;
+}
+.modalCaseText > div ul li:after{
+  position: absolute;
+  content: "-";
+  left: 0;
+  top: -1px;
+}
+@media screen and (max-width: 1023px) {
+  .modalCase {
+    padding: 40px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .modalCase {
+    padding: 20px;
+  }
+  .modalCaseText > strong {
+    font-size: 20px;
+  }
+  .modalCaseText > div {
+    font-size: 12px;
+    margin-top: 10px;
+    line-height: 1.6;
+  }
+}
+
